@@ -1,0 +1,759 @@
+/* ============================================================
+   Galería O+O 东西方画廊 - Rebuilt Static Site
+   Dark burgundy theme matching original galeriaomaso.com
+   ============================================================ */
+
+:root {
+    --bg-dark: #37021c;
+    --bg-darker: #2a0115;
+    --bg-card: #4a0a2e;
+    --bg-card-hover: #5a1038;
+    --accent: #ffd966;
+    --accent-dim: #c9a84a;
+    --text: #f0e8e0;
+    --text-bright: #ffffff;
+    --text-muted: #d4a0b8;
+    --text-body: #e0d0d8;
+    --hover: #741b47;
+    --border: #6b1d42;
+    --border-light: #8a2a55;
+    --teal: #339999;
+    --radius: 6px;
+    --max-width: 1200px;
+    --transition: 0.25s ease;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+    font-family: Georgia, 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    background: var(--bg-dark);
+    color: var(--text);
+    line-height: 1.75;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--text-bright); }
+
+img { max-width: 100%; height: auto; border-radius: var(--radius); }
+
+::selection { background: var(--accent); color: var(--bg-dark); }
+
+/* ============================================================
+   Header
+   ============================================================ */
+header {
+    background: linear-gradient(180deg, #1a010d 0%, var(--bg-darker) 40%, var(--bg-dark) 100%);
+    border-bottom: 2px solid var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.header-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 1.4rem 2rem 0.6rem;
+    text-align: center;
+}
+
+.logo { color: var(--text-bright); text-decoration: none; display: inline-block; }
+.logo:hover { text-decoration: none; color: var(--accent); }
+
+.logo h1 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: 4px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.logo .plus { color: var(--accent); font-weight: bold; font-size: 1.1em; }
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0.15rem;
+    letter-spacing: 1px;
+}
+
+/* ============================================================
+   Navigation
+   ============================================================ */
+nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.5rem 2rem 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: background var(--transition);
+}
+.menu-toggle:hover { background: rgba(255,217,102,0.1); }
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    padding: 0.4rem 0.7rem;
+    border-radius: var(--radius);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all var(--transition);
+    white-space: nowrap;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+    background: rgba(255, 217, 102, 0.1);
+    text-decoration: none;
+}
+
+/* ============================================================
+   Main Content Area
+   ============================================================ */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 2rem;
+    flex: 1;
+    width: 100%;
+}
+
+/* ============================================================
+   Page Header
+   ============================================================ */
+.page-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.page-header h2 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+/* ============================================================
+   Hero (Homepage)
+   ============================================================ */
+.hero {
+    text-align: center;
+    padding: 3.5rem 1.5rem;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(135deg, rgba(74,10,46,0.4) 0%, rgba(55,2,28,0.2) 100%);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+.hero h2 {
+    font-size: 1.7rem;
+    font-weight: normal;
+    color: var(--text-bright);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.hero p {
+    color: var(--text-muted);
+    max-width: 750px;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ============================================================
+   Post Grid (Exhibition cards)
+   ============================================================ */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.post-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.post-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.post-card a { text-decoration: none; display: block; }
+
+.post-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    background: var(--border);
+}
+
+/* Placeholder for broken/missing images */
+.post-card-image[src=""],
+.post-card-image:not([src]),
+.post-card-image.broken {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--border) 100%);
+    position: relative;
+}
+
+.post-card-body { padding: 1.2rem; }
+
+.post-card-body h3 {
+    font-size: 1.05rem;
+    font-weight: normal;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-card-date {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ============================================================
+   Year group headers (in Exposiciones etc.)
+   ============================================================ */
+.year-header {
+    font-size: 1.5rem;
+    color: var(--accent);
+    font-weight: normal;
+    margin: 2.5rem 0 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 2px;
+}
+
+/* ============================================================
+   Page Content (static pages + single posts)
+   ============================================================ */
+.page-content {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    max-width: 900px;
+    margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.page-content h1,
+.page-content h2,
+.page-content h3,
+.page-content h4 {
+    color: var(--accent) !important;
+    background: none !important;
+    font-family: Georgia, serif !important;
+    margin: 1.5rem 0 0.8rem;
+    line-height: 1.3;
+}
+
+.page-content h1 { font-size: 1.6rem; }
+.page-content h2 { font-size: 1.4rem; }
+.page-content h3 { font-size: 1.2rem; }
+
+.page-content p {
+    margin-bottom: 1rem;
+    color: var(--text-body) !important;
+    background: none !important;
+    font-size: inherit !important;
+    line-height: 1.75 !important;
+}
+
+.page-content a { color: var(--accent) !important; }
+.page-content a:hover { color: var(--text-bright) !important; text-decoration: underline; }
+
+.page-content img {
+    display: block;
+    margin: 1.5rem auto;
+    max-height: 600px;
+    border: none !important;
+    border-radius: var(--radius);
+}
+
+/* --- CRITICAL: Override ALL Blogger inline styles in post content --- */
+.page-content div,
+.page-content span,
+.page-content td,
+.page-content th,
+.page-content li,
+.page-content dt,
+.page-content dd,
+.page-content dl,
+.page-content blockquote,
+.page-content pre,
+.page-content code,
+.page-content em,
+.page-content strong,
+.page-content b,
+.page-content i,
+.page-content u {
+    color: var(--text-body) !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    font-family: inherit !important;
+}
+
+/* Re-apply bold/italic styling that the !important above might override */
+.page-content b, .page-content strong { font-weight: 700 !important; }
+.page-content i, .page-content em { font-style: italic !important; }
+
+/* Fix images inside Blogger gallery markup */
+.page-content .gallery-item,
+.page-content dl.gallery-item {
+    float: none !important;
+    display: inline-block !important;
+    width: auto !important;
+    margin: 0.5rem !important;
+    vertical-align: top;
+}
+
+.page-content .gallery-item img,
+.page-content dl img {
+    width: auto;
+    max-width: 280px;
+    height: auto !important;
+    border: none !important;
+}
+
+/* Fix entry-content div from Blogger */
+.page-content .entry-content,
+.page-content .et_post_meta_wrapper,
+.page-content .post-body {
+    background: transparent !important;
+    color: var(--text-body) !important;
+    font-family: inherit !important;
+    font-size: inherit !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* YouTube embeds - responsive container */
+.page-content iframe[src*="youtube"],
+.page-content iframe[src*="youtu.be"] {
+    display: block;
+    margin: 1.5rem auto;
+    width: 100%;
+    max-width: 640px;
+    height: 360px;
+    border: none;
+    border-radius: var(--radius);
+    background: #000;
+}
+@media (max-width: 768px) {
+    .page-content iframe[src*="youtube"],
+    .page-content iframe[src*="youtu.be"] {
+        height: 240px;
+    }
+}
+
+/* Tables in content */
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+.page-content td, .page-content th {
+    padding: 0.5rem;
+    border: 1px solid var(--border) !important;
+}
+
+/* ============================================================
+   Post Meta & Navigation
+   ============================================================ */
+.post-date {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.post-meta {
+    color: var(--text-muted) !important;
+    font-size: 0.85rem !important;
+    background: transparent !important;
+}
+.post-meta a { color: var(--accent-dim) !important; font-size: 0.85rem !important; }
+.post-meta span { color: var(--text-muted) !important; }
+
+.post-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.post-nav a {
+    color: var(--accent);
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+.post-nav a:hover {
+    border-color: var(--accent);
+    background: rgba(255,217,102,0.05);
+    text-decoration: none;
+}
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+.back-link:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
+/* ============================================================
+   Contact Page Specific
+   ============================================================ */
+.contact-info {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.contact-info h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-hours {
+    font-weight: bold;
+    color: var(--text-bright);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.contact-detail {
+    margin: 0.3rem 0;
+    color: var(--text-body);
+    font-size: 1.05rem;
+}
+
+.contact-detail a { color: var(--accent); }
+
+.contact-map {
+    margin-top: 2rem;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.contact-map iframe {
+    width: 100%;
+    height: 350px;
+    border: 0;
+}
+
+/* ============================================================
+   Artists Page
+   ============================================================ */
+.artist-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.artist-section:last-child { border-bottom: none; }
+
+.artist-name {
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-style: italic;
+    margin-bottom: 0.3rem;
+}
+
+.artist-location {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.artist-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.artist-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    transition: border-color var(--transition);
+}
+
+.artist-gallery img:hover { border-color: var(--accent); }
+
+/* ============================================================
+   Links page
+   ============================================================ */
+.links-list {
+    list-style: none;
+}
+.links-list li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--border);
+}
+.links-list li:last-child { border-bottom: none; }
+.links-list a { font-size: 1rem; }
+
+/* ============================================================
+   About / Quienes Somos
+   ============================================================ */
+.about-section {
+    margin-bottom: 2.5rem;
+}
+
+.about-section h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.about-text {
+    color: var(--text-body);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.about-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.about-photos img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #1a010d 100%);
+    border-top: 2px solid var(--accent);
+    text-align: center;
+    padding: 2rem 2rem 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer-inner p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin: 0.3rem 0;
+}
+
+.footer-inner a { color: var(--accent); }
+
+/* ============================================================
+   Utility
+   ============================================================ */
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mb-2 { margin-bottom: 2rem; }
+
+.see-all-link {
+    display: inline-block;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--accent);
+    font-size: 1.05rem;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: all var(--transition);
+}
+.see-all-link:hover {
+    border-color: var(--accent);
+    background: rgba(255,217,102,0.05);
+    text-decoration: none;
+}
+
+/* Broken image placeholder */
+img.broken-img {
+    display: none !important;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 768px) {
+    .logo h1 { font-size: 1.7rem; letter-spacing: 2px; }
+    .subtitle { font-size: 0.78rem; }
+
+    .menu-toggle { display: block; }
+
+    nav { justify-content: flex-end; }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-darker);
+        flex-direction: column;
+        padding: 0.5rem;
+        border-bottom: 2px solid var(--accent);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links a {
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid var(--border);
+    }
+
+    main { padding: 1rem; }
+
+    .post-grid { grid-template-columns: 1fr; }
+
+    .page-content { padding: 1.5rem; }
+
+    .hero { padding: 2rem 1rem; }
+    .hero h2 { font-size: 1.3rem; }
+
+    .artist-gallery { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+
+    .post-nav { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .post-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .page-content { padding: 1rem; }
+    .logo h1 { font-size: 1.4rem; }
+}
+
+/* ============================================================
+   Print
+   ============================================================ */
+@media print {
+    header, footer, nav, .menu-toggle, .back-link, .post-nav { display: none; }
+    body { background: #fff; color: #000; }
+    .page-content { border: none; background: none; }
+    a { color: #333; }
+}
+
+/* ============================================================
+   Image Lightbox Overlay
+   ============================================================ */
+.img-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: pointer;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+.img-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+.img-overlay img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: var(--radius);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+}
+.img-overlay-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+}
+.img-overlay-close:hover { opacity: 1; }
+
+/* Make content image links look clickable */
+.page-content a[href$=".jpg"],
+.page-content a[href$=".jpeg"],
+.page-content a[href$=".png"],
+.page-content a[href$=".gif"] {
+    cursor: zoom-in;
+}
+
+/* ============================================================
+   Focus / Accessibility
+   ============================================================ */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible) { outline: none; }

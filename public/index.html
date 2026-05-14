@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="classic" data-view="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enriqueta Hueso Mart&iacute;nez - Artista multidisciplinar, galerista y gestora cultural. Fundadora de la Galer&iacute;a O+O (Oriente y Occidente), Valencia.">
+    <meta name="keywords" content="Enriqueta Hueso, artista, pintora, Valencia, Galer&iacute;a O+O, Oriente Occidente, arte abstracto, Benimaclet">
+    <meta name="author" content="Enriqueta Hueso Mart&iacute;nez">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Enriqueta Hueso Mart&iacute;nez - Artista">
+    <meta property="og:description" content="Artista multidisciplinar, galerista y gestora cultural. Valencia, Espa&ntilde;a.">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+    <title>Enriqueta Hueso Mart&iacute;nez &mdash; Artista</title>
+
+    <!-- Google Fonts - added signature font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/themes.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <div class="loader-brush"></div>
+            <span class="loader-text">Enriqueta Hueso</span>
+        </div>
+    </div>
+
+    <!-- Navigation with integrated toolbar -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-brand">
+            <a href="#inicio" class="signature-brand">Enriqueta Hueso</a>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#inicio" data-i18n="nav.inicio">Inicio</a></li>
+            <li><a href="#obra" data-i18n="nav.obra">Obra</a></li>
+            <li><a href="#biografia" data-i18n="nav.biografia">Biograf&iacute;a</a></li>
+            <li><a href="#trayectoria" data-i18n="nav.trayectoria">Trayectoria</a></li>
+            <li><a href="#prensa" data-i18n="nav.prensa">Prensa</a></li>
+            <li><a href="#galeria-oo" data-i18n="nav.galeria">Galer&iacute;a O+O</a></li>
+            <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+        </ul>
+
+        <!-- Toolbar: Language, Theme, View Mode - inside nav, far right -->
+        <div class="site-toolbar" id="siteToolbar">
+            <div class="toolbar-group" id="langGroup">
+                <button class="toolbar-btn" id="langToggle" aria-label="Seleccionar idioma" title="Cambiar idioma">
+                    <span class="lang-flag" id="langFlag">&#127466;&#127480;</span>
+                    <span id="langLabel">ES</span>
+                </button>
+                <div class="toolbar-dropdown" id="langDropdown">
+                    <button class="dropdown-option active" data-lang="es"><span class="lang-flag">&#127466;&#127480;</span> Espa&ntilde;ol</button>
+                    <button class="dropdown-option" data-lang="en"><span class="lang-flag">&#127468;&#127463;</span> English</button>
+                    <button class="dropdown-option" data-lang="de"><span class="lang-flag">&#127465;&#127466;</span> Deutsch</button>
+                    <button class="dropdown-option" data-lang="fr"><span class="lang-flag">&#127467;&#127479;</span> Fran&ccedil;ais</button>
+                    <button class="dropdown-option" data-lang="it"><span class="lang-flag">&#127470;&#127481;</span> Italiano</button>
+                    <button class="dropdown-option" data-lang="zh"><span class="lang-flag">&#127464;&#127475;</span> &#20013;&#25991;</button>
+                    <button class="dropdown-option" data-lang="ja"><span class="lang-flag">&#127471;&#127477;</span> &#26085;&#26412;&#35486;</button>
+                    <button class="dropdown-option" data-lang="fa"><span class="lang-flag flag-pahlavi"><svg viewBox="0 0 36 24" width="18" height="12"><rect width="36" height="8" fill="#239f40"/><rect y="8" width="36" height="8" fill="#fff"/><rect y="16" width="36" height="8" fill="#da0000"/><circle cx="18" cy="12" r="3.5" fill="#da0000"/><path d="M15.5 10.5c0 0 1-1.5 2.5-1.5s2.5 1.5 2.5 1.5" stroke="#f4c430" stroke-width="0.6" fill="none"/><line x1="18" y1="8" x2="18" y2="10" stroke="#f4c430" stroke-width="0.7"/><line x1="16.5" y1="9" x2="17.5" y2="10.5" stroke="#f4c430" stroke-width="0.5"/><line x1="19.5" y1="9" x2="18.5" y2="10.5" stroke="#f4c430" stroke-width="0.5"/></svg></span> &#1601;&#1575;&#1585;&#1587;&#1740;</button>
+                </div>
+            </div>
+            <div class="toolbar-divider"></div>
+            <div class="toolbar-group" id="themeGroup">
+                <button class="toolbar-btn" id="themeToggle" aria-label="Cambiar tema" title="Tema visual">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                    </svg>
+                    <span id="themeLabel" data-i18n="toolbar.theme">Tema</span>
+                </button>
+                <div class="toolbar-dropdown theme-dropdown-scroll" id="themeDropdown">
+                    <button class="dropdown-option active" data-theme="classic" data-i18n="theme.classic">Cl&aacute;sico Dorado</button>
+                    <button class="dropdown-option" data-theme="nocturne" data-i18n="theme.nocturne">Nocturno</button>
+                    <button class="dropdown-option" data-theme="orient" data-i18n="theme.orient">Tinta Oriental</button>
+                    <button class="dropdown-option" data-theme="earth" data-i18n="theme.earth">Tierra y Ocre</button>
+                    <button class="dropdown-option" data-theme="abstract" data-i18n="theme.abstract">Abstracto Vivo</button>
+                    <button class="dropdown-option" data-theme="bw" data-i18n="theme.bw">Blanc i Negre</button>
+                    <button class="dropdown-option" data-theme="sepia" data-i18n="theme.sepia">Hist&oacute;rico</button>
+                    <button class="dropdown-option" data-theme="valencia" data-i18n="theme.valencia">Val&egrave;ncia</button>
+                    <button class="dropdown-option" data-theme="vintage" data-i18n="theme.vintage">Vintage</button>
+                    <button class="dropdown-option" data-theme="retro" data-i18n="theme.retro">Retro</button>
+                    <button class="dropdown-option" data-theme="swingjazz" data-i18n="theme.swingjazz">Swing Jazz</button>
+                    <button class="dropdown-option" data-theme="popart" data-i18n="theme.popart">Posmodernista</button>
+                    <button class="dropdown-option" data-theme="picasso" data-i18n="theme.picasso">Picasso</button>
+                    <button class="dropdown-option" data-theme="davinci" data-i18n="theme.davinci">Da Vinci</button>
+                    <button class="dropdown-option" data-theme="munch" data-i18n="theme.munch">El Grito</button>
+                    <button class="dropdown-option" data-theme="highcontrast" data-i18n="theme.highcontrast">Alto Contraste</button>
+                </div>
+            </div>
+            <div class="toolbar-divider"></div>
+            <div class="toolbar-group" id="viewGroup">
+                <button class="toolbar-btn" id="viewToggle" aria-label="Modo de vista" title="Cambiar vista">
+                    <svg class="view-icon-desktop" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+                    </svg>
+                    <svg class="view-icon-mobile" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none">
+                        <rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/>
+                    </svg>
+                    <span id="viewLabel" data-i18n="toolbar.desktop">Escritorio</span>
+                </button>
+            </div>
+        </div>
+
+        <button class="nav-hamburger" id="navHamburger" aria-label="Men&uacute;">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero / Inicio -->
+    <header class="hero" id="inicio">
+        <div class="hero-canvas" id="heroCanvas"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-pre" data-i18n="hero.pre">Artista &middot; Galerista &middot; Gestora Cultural</p>
+            <h1 class="hero-title hero-signature">
+                <span class="hero-line" data-i18n="hero.line1">Enriqueta</span>
+                <span class="hero-line hero-line--accent" data-i18n="hero.line2">Hueso Mart&iacute;nez</span>
+            </h1>
+            <p class="hero-sub" data-i18n="hero.sub">&laquo;Mi pintura es un lenguaje de signos que prefiero sentir antes que explicar intelectualmente&raquo;</p>
+            <a href="#obra" class="hero-cta" data-i18n="hero.cta">Descubrir la obra</a>
+        </div>
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- About Intro -->
+    <section class="intro-section" id="sobre">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <span class="section-label" data-i18n="intro.label">Sobre la artista</span>
+                    <h2 class="section-title" data-i18n="intro.title">Donde Oriente y Occidente convergen en el lienzo</h2>
+                    <p data-i18n="intro.p1">Enriqueta Hueso Mart&iacute;nez (Benimamet, Valencia, 1948) es una artista multidisciplinar licenciada en Bellas Artes por la Universitat Polit&egrave;cnica de Val&egrave;ncia, destacada por su capacidad para interrelacionar el &aacute;mbito cient&iacute;fico con el art&iacute;stico.</p>
+                    <p data-i18n="intro.p2">Sus cualidades creativas sobresalen en pintura, grabado, escultura, fotograf&iacute;a, dise&ntilde;o de portadas, anagramas, logotipos, carteles, videoarte y cine, &aacute;mbitos por los que ha recibido diversos premios y excelentes cr&iacute;ticas.</p>
+                    <p data-i18n="intro.p3">Pionera en llevar artistas espa&ntilde;oles a pa&iacute;ses como China, Jap&oacute;n o India, y en traer a Espa&ntilde;a artistas extranjeros, sus obras se exhiben en Nueva York, Pek&iacute;n, Par&iacute;s, Tokio y Berl&iacute;n.</p>
+                </div>
+                <div class="intro-visual">
+                    <div class="intro-abstract-block"></div>
+                    <div class="intro-abstract-circle"></div>
+                    <div class="intro-quote">
+                        <span data-i18n="intro.quote">&laquo;Pintaba desde ni&ntilde;a, hac&iacute;a retratos y siempre ped&iacute;a a los Reyes Magos pinturas&raquo;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Obra / Gallery -->
+    <section class="obra-section" id="obra">
+        <div class="container">
+            <span class="section-label" data-i18n="obra.label">Obra art&iacute;stica</span>
+            <h2 class="section-title" data-i18n="obra.title">Color, materia y signo</h2>
+            <p class="section-desc" data-i18n="obra.desc">Su pintura combina color y textura mat&eacute;rica para lograr composiciones que revalorizan formas conc&eacute;ntricas, el punto y la espiral, con gran fuerza expresiva. Un lenguaje directo sin bocetos previos, enfatizando la investigaci&oacute;n y experimentaci&oacute;n continua.</p>
+
+            <!-- Dynamic filters - built from gallery-data.json -->
+            <div class="obra-filters" id="obraFilters">
+                <button class="filter-btn active" data-filter="all" data-i18n="obra.all">Todas</button>
+                <!-- Category buttons generated dynamically -->
+            </div>
+
+            <!-- Dynamic grid - built from gallery-data.json -->
+            <div class="obra-grid" id="obraGrid">
+                <!-- Artwork cards generated dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" aria-label="Cerrar">&times;</button>
+        <button class="lightbox-prev" aria-label="Anterior">&#10094;</button>
+        <button class="lightbox-next" aria-label="Siguiente">&#10095;</button>
+        <div class="lightbox-content">
+            <div class="lightbox-img" id="lightboxImg"></div>
+            <div class="lightbox-details">
+                <span class="lightbox-ref" id="lightboxRef"></span>
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <p class="lightbox-caption" id="lightboxCaption"></p>
+                <div class="lightbox-action" id="lightboxAction"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Biografia -->
+    <section class="bio-section" id="biografia">
+        <div class="container">
+            <span class="section-label" data-i18n="bio.label">Biograf&iacute;a</span>
+            <h2 class="section-title" data-i18n="bio.title">La artista</h2>
+
+            <div class="bio-portrait-grid">
+                <div class="bio-photo">
+                    <img src="https://bienalinternacionalcaudete.com/wp-content/uploads/2017/10/1-20.jpg" alt="Enriqueta Hueso Mart&iacute;nez" loading="lazy">
+                </div>
+                <div class="bio-text-content">
+                    <p data-i18n="bio.text1">Enriqueta Hueso Mart&iacute;nez (Benimamet, Valencia, 1948) es una artista multidisciplinar, galerista y gestora cultural valenciana. Licenciada en Bellas Artes por la Universitat Polit&egrave;cnica de Val&egrave;ncia, destaca por su singular capacidad para interrelacionar el &aacute;mbito cient&iacute;fico con el art&iacute;stico, fruto de una doble vocaci&oacute;n que la llev&oacute; a ejercer durante cuarenta a&ntilde;os como enfermera en el Hospital Cl&iacute;nico de Valencia mientras desarrollaba en paralelo su carrera art&iacute;stica.</p>
+                    <p data-i18n="bio.text2">Su obra se centra en la pintura mat&eacute;rica y el arte abstracto, donde combina color y textura para crear composiciones de gran fuerza expresiva basadas en formas conc&eacute;ntricas, puntos y espirales. Trabaja sin bocetos previos, con un lenguaje directo de signos que, seg&uacute;n sus propias palabras, &laquo;prefiere sentir antes que explicar intelectualmente&raquo;. Durante m&aacute;s de una d&eacute;cada ha creado collages basados en la obra del artista japon&eacute;s Kenryo Hara, incorporando t&eacute;cnicas de corte, pegado e incrustaciones mat&eacute;ricas.</p>
+                    <p data-i18n="bio.text3">Desde ni&ntilde;a sinti&oacute; la llamada del arte, influenciada por un t&iacute;o pintor cuyas obras se conservan en el Museo del Prado. En 2007 fund&oacute; la Galer&iacute;a O+O (Oriente y Occidente) en el barrio de Benimaclet, Valencia, convirti&eacute;ndola en un referente internacional del intercambio cultural entre Oriente y Occidente. Pionera en llevar artistas espa&ntilde;oles a China, Jap&oacute;n e India, sus obras forman parte de colecciones permanentes en museos de Brasil, M&eacute;xico, Italia y Miami, y se exhiben en embajadas y fundaciones de Shangh&aacute;i, Pek&iacute;n, Tokio, Nueva York, Par&iacute;s y Berl&iacute;n.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trayectoria -->
+    <section class="trayectoria-section" id="trayectoria">
+        <div class="container">
+            <span class="section-label" data-i18n="tray.label">Trayectoria</span>
+            <h2 class="section-title" data-i18n="tray.title">Una vida dedicada al arte</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1948</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bio.t1.title">Nacimiento</h3>
+                        <p data-i18n="bio.t1.text">Nace en Benimamet, Valencia. Desde ni&ntilde;a muestra una pasi&oacute;n innata por la pintura, influenciada por un t&iacute;o pintor cuyas obras se encuentran en el Museo del Prado y cuyo estudio la inspir&oacute; desde temprana edad.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1970s</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bio.t2.title">Formaci&oacute;n y doble vocaci&oacute;n</h3>
+                        <p data-i18n="bio.t2.text">Se licencia en Enfermer&iacute;a y comienza a trabajar en el Hospital Cl&iacute;nico de Valencia, profesi&oacute;n que ejercer&aacute; durante cuarenta a&ntilde;os. Simult&aacute;neamente estudia Bellas Artes en la Universitat Polit&egrave;cnica de Val&egrave;ncia, compaginando turnos hospitalarios con clases de arte y crianza.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1980s&ndash;90s</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bio.t3.title">Consolidaci&oacute;n art&iacute;stica</h3>
+                        <p data-i18n="bio.t3.text">Desarrolla su lenguaje pict&oacute;rico propio centrado en la pintura mat&eacute;rica. Participa en exposiciones nacionales e internacionales. Sus series dedicadas a la flora, el paisaje y la m&uacute;sica comienzan a definir su universo creativo con formas conc&eacute;ntricas, puntos y espirales.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2007</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bio.t4.title">Fundaci&oacute;n de la Galer&iacute;a O+O</h3>
+                        <p data-i18n="bio.t4.text">Funda la Gesti&oacute;n Cultural O+O (Oriente y Occidente) en Benimaclet, Valencia. La galer&iacute;a nace con la misi&oacute;n de abrir un di&aacute;logo entre las culturas pl&aacute;sticas de Oriente y Occidente, convirti&eacute;ndose en referente internacional del intercambio cultural.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2010s</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bio.t5.title">Proyecci&oacute;n internacional</h3>
+                        <p data-i18n="bio.t5.text">Pionera en llevar artistas espa&ntilde;oles a China, Jap&oacute;n e India, y en traer artistas orientales a Espa&ntilde;a. Organiza la hist&oacute;rica exposici&oacute;n de 35 artistas del grupo Tsai Mo (China) en Benimaclet. Comisaría exposiciones como &laquo;Visual Emotions&raquo; (2015) y &laquo;Utop&iacute;as&raquo;. Colabora con Kenryo Hara en la Salomon Arts Gallery de Nueva York.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020s</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="bio.t6.title">Reconocimiento y legado</h3>
+                        <p data-i18n="bio.t6.text">Sus obras forman parte de colecciones permanentes en museos de Brasil, M&eacute;xico, Italia y Miami. Se exhiben en embajadas y fundaciones de Shangh&aacute;i, Pek&iacute;n, Tokio, Nueva York, Par&iacute;s y Berl&iacute;n. Expone en Times Square, Nueva York, en el proyecto &laquo;Art of Spain in New York&raquo;. Recibe el reconocimiento de la asociaci&oacute;n vecinal de Benimaclet por su contribuci&oacute;n a la promoci&oacute;n cultural del barrio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-summary">
+                <h3 data-i18n="bio.cv.title">Talento y habilidades</h3>
+                <div class="cv-grid">
+                    <div class="cv-card">
+                        <div class="cv-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <h4 data-i18n="bio.cv.disciplinas">Disciplinas</h4>
+                        <p data-i18n="bio.cv.disciplinas.text">Pintura, Grabado, Escultura, Fotograf&iacute;a, Videoarte, Dise&ntilde;o gr&aacute;fico, Cine</p>
+                    </div>
+                    <div class="cv-card">
+                        <div class="cv-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+                        </div>
+                        <h4 data-i18n="bio.cv.presencia">Presencia internacional</h4>
+                        <p data-i18n="bio.cv.presencia.text">Nueva York, Pek&iacute;n, Shangh&aacute;i, Tokio, Par&iacute;s, Berl&iacute;n, Montreal, Brasil, M&eacute;xico, Italia, Miami</p>
+                    </div>
+                    <div class="cv-card">
+                        <div class="cv-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h4 data-i18n="bio.cv.formacion">Formaci&oacute;n</h4>
+                        <p data-i18n="bio.cv.formacion.text">Licenciada en Bellas Artes, Universitat Polit&egrave;cnica de Val&egrave;ncia. Diplomada en Enfermer&iacute;a.</p>
+                    </div>
+                    <div class="cv-card">
+                        <div class="cv-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                        </div>
+                        <h4 data-i18n="bio.cv.galerias">Galer&iacute;as</h4>
+                        <p class="cv-gallery-links">
+                            <a href="https://www.galeriaomaso.com/index.html">Galer&iacute;a O+O</a>
+                            <a href="https://www.arteinformado.com/guia/f/enriqueta-hueso-martinez-18" target="_blank" rel="noopener">ARTEINFORMADO</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prensa -->
+    <section class="prensa-section" id="prensa">
+        <div class="container">
+            <span class="section-label" data-i18n="prensa.label">En los medios</span>
+            <h2 class="section-title" data-i18n="prensa.title">Prensa y publicaciones</h2>
+
+            <div class="prensa-grid">
+                <article class="prensa-card">
+                    <div class="prensa-card-accent"></div>
+                    <div class="prensa-card-body">
+                        <span class="prensa-source">Disfruta Benimaclet</span>
+                        <span class="prensa-date">2024</span>
+                        <h3><a href="https://disfrutabenimaclet.com/2024/02/12/enriqueta-hueso-la-artista-y-galerista-que-ha-traido-a-benimaclet-arte-internacional/" target="_blank" rel="noopener" data-i18n="prensa.a1.title">Enriqueta Hueso, la artista y galerista de Benimaclet m&aacute;s internacional</a></h3>
+                        <p data-i18n="prensa.a1.text">Reportaje sobre la trayectoria de Enriqueta Hueso como artista y galerista que ha tra&iacute;do arte internacional al barrio de Benimaclet, Valencia.</p>
+                    </div>
+                </article>
+                <article class="prensa-card">
+                    <div class="prensa-card-accent"></div>
+                    <div class="prensa-card-body">
+                        <span class="prensa-source">Repositori UJI &mdash; Universitat Jaume I</span>
+                        <span class="prensa-date">2018</span>
+                        <h3><a href="https://repositori.uji.es/items/834bbe25-1ba1-447e-a3ff-f505504c838e" target="_blank" rel="noopener" data-i18n="prensa.a2.title">Enriqueta Hueso y la galer&iacute;a O+O: un espacio art&iacute;stico en el relato identitario de un distrito urbano perif&eacute;rico</a></h3>
+                        <p data-i18n="prensa.a2.text">Estudio acad&eacute;mico publicado por la Universitat Jaume I que analiza el impacto de la Galer&iacute;a O+O en la identidad cultural del barrio de Benimaclet.</p>
+                    </div>
+                </article>
+                <article class="prensa-card">
+                    <div class="prensa-card-accent"></div>
+                    <div class="prensa-card-body">
+                        <span class="prensa-source">Dialnet &mdash; Publicaci&oacute;n acad&eacute;mica</span>
+                        <span class="prensa-date">2018</span>
+                        <h3><a href="https://dialnet.unirioja.es/descarga/articulo/6553233.pdf" target="_blank" rel="noopener" data-i18n="prensa.a3.title">Enriqueta Hueso and the Gallery O+O (Oriente and Occidente)</a></h3>
+                        <p data-i18n="prensa.a3.text">Art&iacute;culo acad&eacute;mico en ingl&eacute;s que analiza la labor de Enriqueta Hueso como artista y gestora cultural a trav&eacute;s de su galer&iacute;a O+O.</p>
+                    </div>
+                </article>
+                <article class="prensa-card">
+                    <div class="prensa-card-accent"></div>
+                    <div class="prensa-card-body">
+                        <span class="prensa-source">ARTEINFORMADO</span>
+                        <span class="prensa-date">Perfil activo</span>
+                        <h3><a href="https://www.arteinformado.com/guia/f/enriqueta-hueso-martinez-18" target="_blank" rel="noopener" data-i18n="prensa.a4.title">Enriqueta Hueso Mart&iacute;nez &mdash; Perfil de artista, comisaria y galerista</a></h3>
+                        <p data-i18n="prensa.a4.text">Perfil profesional en ARTEINFORMADO con registro de exposiciones, actividad curatorial y representaci&oacute;n en galer&iacute;as.</p>
+                    </div>
+                </article>
+                <article class="prensa-card">
+                    <div class="prensa-card-accent"></div>
+                    <div class="prensa-card-body">
+                        <span class="prensa-source">Museo Karura Art Centre (MKAC)</span>
+                        <span class="prensa-date">2010</span>
+                        <h3><a href="https://mkac.wordpress.com/2010/03/08/museos-y-galerias-galeria-o-o/" target="_blank" rel="noopener" data-i18n="prensa.a5.title">Museos y Galer&iacute;as: &laquo;Galer&iacute;a O+O&raquo;</a></h3>
+                        <p data-i18n="prensa.a5.text">Rese&ntilde;a del Museo Karura Art Centre sobre la Galer&iacute;a O+O como centro de referencia internacional para el intercambio cultural entre Oriente y Occidente.</p>
+                    </div>
+                </article>
+                <article class="prensa-card">
+                    <div class="prensa-card-accent"></div>
+                    <div class="prensa-card-body">
+                        <span class="prensa-source">Museo del Mar &mdash; Santa Pola</span>
+                        <span class="prensa-date">2022</span>
+                        <h3><a href="https://museodelmarsantapola.com/oriente-occidente/" target="_blank" rel="noopener" data-i18n="prensa.a6.title">Oriente + Occidente &#26481;&#35199;&#26041;&#30011;&#24266; en el Museo del Mar</a></h3>
+                        <p data-i18n="prensa.a6.text">Exposici&oacute;n de la Galer&iacute;a O+O en el Museo del Mar de Santa Pola, Alicante, como parte de su programa de intercambio cultural internacional.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria O+O -->
+    <section class="galeria-section" id="galeria-oo">
+        <div class="container">
+            <div class="galeria-grid">
+                <div class="galeria-info">
+                    <span class="section-label" data-i18n="galeria.label">Gesti&oacute;n Cultural</span>
+                    <h2 class="section-title" data-i18n="galeria.title">Galer&iacute;a O+O<br><span class="galeria-subtitle">Oriente y Occidente &#26481;&#35199;&#26041;&#30011;&#24266;</span></h2>
+                    <p data-i18n="galeria.p1">Fundada en mayo de 2007, la Galer&iacute;a O+O es un centro de referencia internacional ubicado en la calle Francisco Mart&iacute;nez, en el barrio de Benimaclet, Valencia.</p>
+                    <p data-i18n="galeria.p2">Su nombre responde a la intenci&oacute;n de abrir un di&aacute;logo entre las culturas pl&aacute;sticas de Oriente y Occidente, tomando esta mezcla como singularidad.</p>
+                    <p data-i18n="galeria.p3">Para Enriqueta, era fundamental &laquo;educar a la gente en el barrio&raquo;: acercar exposiciones que a veces eran &laquo;muy dif&iacute;ciles, muy conceptuales, pero muy buenas&raquo;, e impartir cursos de pintura.</p>
+                    <p data-i18n="galeria.p4">Las inauguraciones de la galer&iacute;a han llegado a congregar a 250 personas, muchas de ellas procedentes del extranjero, convirtiendo a Benimaclet en un punto de referencia art&iacute;stico y cultural de Valencia.</p>
+                    <div class="galeria-stats">
+                        <div class="stat">
+                            <span class="stat-number">2007</span>
+                            <span class="stat-label" data-i18n="galeria.stat1">A&ntilde;o de fundaci&oacute;n</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">250+</span>
+                            <span class="stat-label" data-i18n="galeria.stat2">Asistentes por inauguraci&oacute;n</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label" data-i18n="galeria.stat3">Continentes representados</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-visual">
+                    <div class="galeria-abstract-composition">
+                        <div class="galeria-shape galeria-shape-1"></div>
+                        <div class="galeria-shape galeria-shape-2"></div>
+                        <div class="galeria-shape galeria-shape-3"></div>
+                        <div class="galeria-shape galeria-shape-4"></div>
+                        <div class="galeria-east-west">
+                            <span>&#26481;</span>
+                            <span class="galeria-plus">+</span>
+                            <span>&#35199;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://www.galeriaomaso.com" class="galeria-enter-btn" data-i18n="galeria.enter">Entrar en la Galer&iacute;a O+O &rarr;</a>
+
+            <!-- Quick access to gallery sections -->
+            <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem;">
+                <a href="galeria/exposiciones.html" style="display: block; padding: 1.2rem; border: 1px solid rgba(184,134,11,0.15); border-radius: 4px; text-align: center; transition: all 0.3s; text-decoration: none;">
+                    <span style="display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--color-accent);">Exposiciones</span>
+                    <span style="font-size: 0.78rem; color: var(--color-text-light);">313 exposiciones desde 2007</span>
+                </a>
+                <a href="galeria/artistas.html" style="display: block; padding: 1.2rem; border: 1px solid rgba(184,134,11,0.15); border-radius: 4px; text-align: center; transition: all 0.3s; text-decoration: none;">
+                    <span style="display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--color-accent);">Artistas</span>
+                    <span style="font-size: 0.78rem; color: var(--color-text-light);">Artistas nacionales e internacionales</span>
+                </a>
+                <a href="galeria/internacional.html" style="display: block; padding: 1.2rem; border: 1px solid rgba(184,134,11,0.15); border-radius: 4px; text-align: center; transition: all 0.3s; text-decoration: none;">
+                    <span style="display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--color-accent);">Internacional</span>
+                    <span style="font-size: 0.78rem; color: var(--color-text-light);">Eventos y exposiciones internacionales</span>
+                </a>
+                <a href="galeria/noticias.html" style="display: block; padding: 1.2rem; border: 1px solid rgba(184,134,11,0.15); border-radius: 4px; text-align: center; transition: all 0.3s; text-decoration: none;">
+                    <span style="display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--color-accent);">Noticias</span>
+                    <span style="font-size: 0.78rem; color: var(--color-text-light);">Noticias y prensa de la galer&iacute;a</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contacto-section" id="contacto">
+        <div class="container">
+            <span class="section-label" data-i18n="contacto.label">Contacto</span>
+            <h2 class="section-title" data-i18n="contacto.title">Hablemos</h2>
+            <p class="section-desc" data-i18n="contacto.desc">Para consultas sobre obra, exposiciones, colaboraciones o cualquier otra cuesti&oacute;n, no dude en ponerse en contacto.</p>
+
+            <div class="contacto-grid">
+                <form class="contacto-form" id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="nombre" data-i18n="contacto.nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contacto.email">Correo electr&oacute;nico</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="motivo" data-i18n="contacto.motivo">Motivo de la consulta</label>
+                        <select id="motivo" name="motivo" required>
+                            <option value="" data-i18n="contacto.motivo.select">Seleccione un motivo</option>
+                            <option value="compra" data-i18n="contacto.motivo.compra">Compra de obra art&iacute;stica</option>
+                            <option value="obra" data-i18n="contacto.motivo.obra">Informaci&oacute;n sobre obra</option>
+                            <option value="exposicion" data-i18n="contacto.motivo.expo">Propuesta de exposici&oacute;n</option>
+                            <option value="colaboracion" data-i18n="contacto.motivo.colab">Colaboraci&oacute;n art&iacute;stica</option>
+                            <option value="prensa" data-i18n="contacto.motivo.prensa">Prensa y medios</option>
+                            <option value="galeria" data-i18n="contacto.motivo.galeria">Galer&iacute;a O+O</option>
+                            <option value="otro" data-i18n="contacto.motivo.otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="asunto" data-i18n="contacto.asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje" data-i18n="contacto.mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" data-i18n="contacto.enviar">Enviar mensaje</button>
+                    <div class="form-success" id="formSuccess">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                        <span data-i18n="contacto.exito">Mensaje enviado correctamente. Nos pondremos en contacto pronto.</span>
+                    </div>
+                </form>
+
+                <div class="contacto-info-side">
+                    <div class="contacto-detail">
+                        <h4 data-i18n="contacto.ubicacion">Ubicaci&oacute;n</h4>
+                        <p>Benimaclet, Valencia<br>Espa&ntilde;a</p>
+                    </div>
+                    <div class="contacto-detail">
+                        <h4 data-i18n="contacto.galeria.title">Galer&iacute;a O+O</h4>
+                        <p>C/ Francisco Mart&iacute;nez<br>Benimaclet, Valencia</p>
+                    </div>
+                    <div class="contacto-detail">
+                        <h4 data-i18n="contacto.web">Web</h4>
+                        <p><a href="http://www.galeriaomaso.com" target="_blank" rel="noopener">galeriaomaso.com</a></p>
+                    </div>
+                    <div class="contacto-abstract-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="footer-name signature-brand">Enriqueta Hueso</span>
+                    <p class="footer-tagline" data-i18n="footer.tagline">Artista &middot; Galerista &middot; Gestora Cultural</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio" data-i18n="nav.inicio">Inicio</a>
+                    <a href="#obra" data-i18n="nav.obra">Obra</a>
+                    <a href="#biografia" data-i18n="nav.biografia">Biograf&iacute;a</a>
+                    <a href="#trayectoria" data-i18n="nav.trayectoria">Trayectoria</a>
+                    <a href="#prensa" data-i18n="nav.prensa">Prensa</a>
+                    <a href="#galeria-oo" data-i18n="nav.galeria">Galer&iacute;a O+O</a>
+                    <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/people/Galeria-OO/100063684498498/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        <span>TikTok</span>
+                    </a>
+                    <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X" title="X (Twitter)">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        <span>X</span>
+                    </a>
+                </div>
+                <div class="footer-copy">
+                    <p>&copy; <span id="currentYear"></span> Enriqueta Hueso Mart&iacute;nez. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-abstract-bar"></div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

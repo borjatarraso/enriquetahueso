@@ -1,0 +1,497 @@
+/* ============================================================
+   ARTISTIC THEMES - ALL URLS VERIFIED HTTP 200
+   ============================================================ */
+
+/* --- Pseudo-element layers on ALL sections --- */
+[data-theme] .hero::after,
+[data-theme] .intro-section::before,
+[data-theme] .obra-section::after,
+[data-theme] .bio-section::before,
+[data-theme] .trayectoria-section::after,
+[data-theme] .galeria-section::before,
+[data-theme] .contacto-section::after,
+[data-theme] .prensa-section::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+[data-theme] .intro-section,
+[data-theme] .obra-section,
+[data-theme] .bio-section,
+[data-theme] .trayectoria-section,
+[data-theme] .galeria-section,
+[data-theme] .contacto-section,
+[data-theme] .prensa-section { position: relative; overflow: hidden; }
+
+[data-theme] .intro-section > .container,
+[data-theme] .obra-section > .container,
+[data-theme] .bio-section > .container,
+[data-theme] .trayectoria-section > .container,
+[data-theme] .galeria-section > .container,
+[data-theme] .contacto-section > .container,
+[data-theme] .prensa-section > .container { position: relative; z-index: 1; }
+
+[data-theme] .hero-content { z-index: 2; position: relative; }
+[data-theme] .hero-overlay { z-index: 1; }
+
+/* --- Dropdown ALWAYS readable: forced white bg, dark text --- */
+.toolbar-dropdown {
+    background: #ffffff !important;
+    border-color: rgba(0,0,0,0.12) !important;
+}
+.toolbar-dropdown .dropdown-option {
+    color: #333 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+}
+.toolbar-dropdown .dropdown-option:hover {
+    background: #f0f0f0 !important;
+    color: #111 !important;
+}
+.toolbar-dropdown .dropdown-option.active {
+    color: #0050a0 !important;
+    font-weight: 600;
+    background: #e8f0ff !important;
+}
+
+/* ============================================================
+   Blanc i Negre
+   ============================================================ */
+[data-theme="bw"] {
+    --color-bg: #f5f5f5; --color-bg-alt: #e8e8e8; --color-text: #1a1a1a;
+    --color-text-light: #555; --color-accent: #333; --color-accent-deep: #111;
+    --color-accent-light: #666; --color-ink: #000; --color-cream: #f0f0f0;
+    --color-terracotta: #444; --color-ochre: #777; --color-indigo: #333;
+    --color-sage: #555; --color-white: #fff;
+    --color-toolbar-bg: rgba(245,245,245,0.96); --color-toolbar-border: rgba(0,0,0,0.15);
+}
+[data-theme="bw"] .hero { background: #000; }
+[data-theme="bw"] .hero-overlay { background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3)); }
+[data-theme="bw"] .hero-line { color: #fff; } [data-theme="bw"] .hero-line--accent { color: #aaa; font-style: normal; }
+[data-theme="bw"] .hero-cta { border-color: #fff; color: #fff; } [data-theme="bw"] .hero-cta:hover { background: #fff; color: #000; }
+[data-theme="bw"] .hero-pre { color: #888; } [data-theme="bw"] .hero-sub { color: rgba(255,255,255,0.5); }
+[data-theme="bw"] .prensa-section { background: #111; } [data-theme="bw"] .main-footer { background: #111; }
+[data-theme="bw"] .main-nav.scrolled { background: rgba(245,245,245,0.96); }
+[data-theme="bw"] .main-nav.scrolled .signature-brand { color: #000; }
+[data-theme="bw"] .main-nav.scrolled .nav-links a { color: #555; }
+[data-theme="bw"] .main-nav.scrolled .nav-hamburger span { background: #000; }
+[data-theme="bw"] img, [data-theme="bw"] .obra-img { filter: grayscale(100%) contrast(1.1); }
+[data-theme="bw"] .footer-abstract-bar { background: linear-gradient(to right, #000, #333, #666, #999, #ccc, #fff); }
+
+/* ============================================================
+   Histórico (Sepia)
+   ============================================================ */
+[data-theme="sepia"] {
+    --color-bg: #f5ead0; --color-bg-alt: #ecdbb8; --color-text: #3e2f1c;
+    --color-text-light: #6b5638; --color-accent: #8b6914; --color-accent-deep: #6b4f0e;
+    --color-accent-light: #b08a2a; --color-ink: #2a1e0e; --color-cream: #f0e4c8;
+    --color-terracotta: #9e6432; --color-ochre: #b8862d; --color-indigo: #5c4a2e;
+    --color-sage: #6d6030; --color-white: #f8f0da;
+    --color-toolbar-bg: rgba(245,234,208,0.96); --color-toolbar-border: rgba(139,105,20,0.2);
+}
+[data-theme="sepia"] .hero { background: #2a1e0e; }
+[data-theme="sepia"] .hero-overlay { background: linear-gradient(135deg, rgba(42,30,14,0.8), rgba(42,30,14,0.35)); }
+[data-theme="sepia"] .hero-line--accent { color: #b08a2a; }
+[data-theme="sepia"] .prensa-section { background: #2a1e0e; } [data-theme="sepia"] .main-footer { background: #2a1e0e; }
+[data-theme="sepia"] .main-nav.scrolled { background: rgba(245,234,208,0.95); }
+[data-theme="sepia"] .main-nav.scrolled .signature-brand { color: var(--color-ink); }
+[data-theme="sepia"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="sepia"] .main-nav.scrolled .nav-hamburger span { background: var(--color-ink); }
+[data-theme="sepia"] img, [data-theme="sepia"] .obra-img { filter: sepia(80%) contrast(0.9); }
+[data-theme="sepia"] .footer-abstract-bar { background: linear-gradient(to right, #6b4f0e, #8b6914, #b08a2a, #d4a843, #8b6914); }
+
+/* ============================================================
+   València - VERIFIED URLS
+   Torres Serrano, Micalet, Ciutat Arts, Lonja, Basilica, Mercado, Catedral
+   ============================================================ */
+[data-theme="valencia"] {
+    --color-bg: #fdf8ed; --color-bg-alt: #faf0d5; --color-text: #2c1810;
+    --color-text-light: #6b4430; --color-accent: #d42e12; --color-accent-deep: #a82410;
+    --color-accent-light: #ef5a20; --color-ink: #1a0c06; --color-cream: #fef5e0;
+    --color-terracotta: #d44a20; --color-ochre: #f5a623; --color-indigo: #1a4b8a;
+    --color-sage: #5a8a2e; --color-white: #fffbf0;
+    --color-toolbar-bg: rgba(253,248,237,0.97); --color-toolbar-border: rgba(212,46,18,0.25);
+}
+/* Franja Senyera lateral - Comunitat Valenciana (azul + rojo/amarillo) */
+[data-theme="valencia"] body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 24px; height: 100%;
+    background: linear-gradient(to right, #1a4b8a 0, #1a4b8a 8px, #d42e12 8px, #d42e12 12px, #f5a623 12px, #f5a623 16px, #d42e12 16px, #d42e12 20px, #f5a623 20px, #f5a623 24px);
+    z-index: 9999; pointer-events: none;
+}
+/* Hero: Torres de Serrano - MUY VISIBLE */
+[data-theme="valencia"] .hero { background: #1a0c06; }
+[data-theme="valencia"] .hero::after {
+    opacity: 0.55;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/5/59/Torres_de_Serranos_%28Valencia%29.jpg") center/cover no-repeat;
+    filter: sepia(15%) brightness(0.85);
+}
+[data-theme="valencia"] .hero-overlay { background: linear-gradient(180deg, rgba(26,12,6,0.25) 0%, rgba(26,12,6,0.5) 50%, rgba(26,12,6,0.88) 100%); z-index: 1; }
+/* Intro: Basilica Virgen Desamparados */
+[data-theme="valencia"] .intro-section::before {
+    opacity: 0.18;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/b/b7/Bas%C3%ADlica_de_la_Virgen_de_los_Desamparados._Valencia.jpg") center/cover no-repeat;
+    filter: sepia(25%);
+}
+/* Obra: Ciudad de las Artes */
+[data-theme="valencia"] .obra-section::after {
+    opacity: 0.2;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/4/49/Ciudad_de_las_Artes_y_las_Ciencias%2C_Valencia.jpg") center/cover no-repeat;
+}
+/* Bio: Micalet */
+[data-theme="valencia"] .bio-section::before {
+    opacity: 0.3;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/c/cc/El_Miguelete_o_Micalet%2C_torre_de_la_catedral_de_Valencia%2C_Espa%C3%B1a.JPG") right center/auto 100% no-repeat;
+    filter: sepia(25%);
+}
+/* Trayectoria: Catedral interior */
+[data-theme="valencia"] .trayectoria-section::after {
+    opacity: 0.15;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/9/9b/Catedral_de_Valencia_interior_04.JPG") center/cover no-repeat;
+    filter: sepia(25%);
+}
+/* Galeria: Lonja de la Seda */
+[data-theme="valencia"] .galeria-section::before {
+    opacity: 0.25;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/b/b7/Lonja_de_la_Seda%2C_Valencia%2C_Espa%C3%B1a%2C_2014-06-29%2C_DD_20.JPG") center/cover no-repeat;
+    filter: sepia(15%);
+}
+/* Contacto: Mercado Central */
+[data-theme="valencia"] .contacto-section::after {
+    opacity: 0.15;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/f/ff/Mercado_Central_de_Valencia_2.jpg") center/cover no-repeat;
+    filter: sepia(20%);
+}
+/* Barras Senyera en separadores */
+[data-theme="valencia"] .obra-section::before, [data-theme="valencia"] .trayectoria-section::before, [data-theme="valencia"] .contacto-section::before { height: 12px !important; background: repeating-linear-gradient(to right, #d42e12 0 12.5%, #f5a623 12.5% 25%) !important; opacity: 1 !important; }
+[data-theme="valencia"] .hero-line { color: #f5a623; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+[data-theme="valencia"] .hero-line--accent { color: #d42e12; font-style: normal; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
+[data-theme="valencia"] .hero-pre { color: #f5a623; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+[data-theme="valencia"] .hero-sub { text-shadow: 1px 1px 3px rgba(0,0,0,0.8); }
+[data-theme="valencia"] .hero-cta { border-color: #f5a623; color: #f5a623; border-width: 2px; }
+[data-theme="valencia"] .hero-cta:hover { background: #d42e12; border-color: #d42e12; color: #fff; }
+[data-theme="valencia"] .section-title { color: #d42e12; }
+[data-theme="valencia"] .prensa-section { background: #1a0c06; } [data-theme="valencia"] .main-footer { background: #1a0c06; }
+[data-theme="valencia"] .main-nav.scrolled { background: rgba(253,248,237,0.97); }
+[data-theme="valencia"] .main-nav.scrolled .signature-brand { color: #d42e12; }
+[data-theme="valencia"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="valencia"] .main-nav.scrolled .nav-hamburger span { background: var(--color-ink); }
+[data-theme="valencia"] .footer-abstract-bar { height: 14px; background: repeating-linear-gradient(to right, #d42e12 0 12.5%, #f5a623 12.5% 25%); }
+[data-theme="valencia"] .cv-summary::before { height: 10px; background: repeating-linear-gradient(to right, #d42e12 0 12.5%, #f5a623 12.5% 25%); }
+[data-theme="valencia"] .prensa-card-accent { height: 6px; background: repeating-linear-gradient(to right, #d42e12 0 50%, #f5a623 50% 100%); }
+
+/* ============================================================
+   Vintage
+   ============================================================ */
+[data-theme="vintage"] {
+    --color-bg: #f0e6d3; --color-bg-alt: #e5d8c0; --color-text: #3a2e22;
+    --color-text-light: #6e5d4a; --color-accent: #8e5b3a; --color-accent-deep: #6a3f25;
+    --color-accent-light: #b87a50; --color-ink: #2a1f14; --color-cream: #ede3d0;
+    --color-terracotta: #a05535; --color-ochre: #c49040; --color-indigo: #4a5a4a;
+    --color-sage: #6a7a55; --color-white: #f5ede0;
+    --color-toolbar-bg: rgba(240,230,211,0.96); --color-toolbar-border: rgba(142,91,58,0.2);
+}
+[data-theme="vintage"] body { font-family: 'Cormorant Garamond', Georgia, serif; }
+[data-theme="vintage"] .hero { background: #2a1f14; }
+[data-theme="vintage"] .hero-overlay { background: linear-gradient(135deg, rgba(42,31,20,0.8), rgba(42,31,20,0.35)); }
+[data-theme="vintage"] .prensa-section { background: #2a1f14; } [data-theme="vintage"] .main-footer { background: #2a1f14; }
+[data-theme="vintage"] .main-nav.scrolled { background: rgba(240,230,211,0.96); }
+[data-theme="vintage"] .main-nav.scrolled .signature-brand { color: var(--color-ink); }
+[data-theme="vintage"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="vintage"] .main-nav.scrolled .nav-hamburger span { background: var(--color-ink); }
+[data-theme="vintage"] .obra-item { border-radius: 0; box-shadow: 4px 4px 0 rgba(42,31,20,0.15); }
+[data-theme="vintage"] img { filter: sepia(30%) contrast(1.05); }
+[data-theme="vintage"] .footer-abstract-bar { background: linear-gradient(to right, #6a3f25, #8e5b3a, #b87a50, #c49040, #8e5b3a); }
+
+/* ============================================================
+   Retro (60s-70s)
+   ============================================================ */
+[data-theme="retro"] {
+    --color-bg: #fef3e2; --color-bg-alt: #fce5c0; --color-text: #2d1b0e;
+    --color-text-light: #6b4020; --color-accent: #e85d26; --color-accent-deep: #c44a1a;
+    --color-accent-light: #f4813a; --color-ink: #1e1008; --color-cream: #fef0d8;
+    --color-terracotta: #d44025; --color-ochre: #e8a020; --color-indigo: #2b6b6b;
+    --color-sage: #5a8a32; --color-white: #fff6e8;
+    --color-toolbar-bg: rgba(254,243,226,0.96); --color-toolbar-border: rgba(232,93,38,0.2);
+}
+[data-theme="retro"] .hero { background: #1e1008; }
+[data-theme="retro"] .hero-overlay { background: radial-gradient(ellipse at 20% 50%, rgba(232,93,38,0.15), transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(43,107,107,0.15), transparent 50%), linear-gradient(135deg, rgba(30,16,8,0.7), rgba(30,16,8,0.3)); }
+[data-theme="retro"] .hero-line { color: #fce5c0; } [data-theme="retro"] .hero-line--accent { color: #e85d26; font-style: normal; }
+[data-theme="retro"] .hero-pre { color: #e8a020; }
+[data-theme="retro"] .hero-cta { border-color: #e85d26; color: #e85d26; border-radius: 50px; border-width: 2px; }
+[data-theme="retro"] .hero-cta:hover { background: #e85d26; color: #fff; }
+[data-theme="retro"] .prensa-section { background: #1e1008; } [data-theme="retro"] .main-footer { background: #1e1008; }
+[data-theme="retro"] .main-nav.scrolled { background: rgba(254,243,226,0.96); }
+[data-theme="retro"] .main-nav.scrolled .signature-brand { color: var(--color-ink); }
+[data-theme="retro"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="retro"] .main-nav.scrolled .nav-hamburger span { background: var(--color-ink); }
+[data-theme="retro"] .obra-item, [data-theme="retro"] .prensa-card { border-radius: 16px; }
+[data-theme="retro"] .filter-btn { border-radius: 50px; }
+[data-theme="retro"] .form-submit { border-radius: 50px; background: #e85d26; border-color: #e85d26; }
+[data-theme="retro"] .footer-abstract-bar { background: linear-gradient(to right, #e85d26, #e8a020, #2b6b6b, #5a8a32, #d44025); }
+
+/* ============================================================
+   Swing Jazz - VERIFIED saxophone URL
+   ============================================================ */
+[data-theme="swingjazz"] {
+    --color-bg: #0e0c14; --color-bg-alt: #16131f; --color-text: #e8d8c0;
+    --color-text-light: #a8967a; --color-accent: #c8a050; --color-accent-deep: #a07830;
+    --color-accent-light: #e0be70; --color-ink: #08060c; --color-cream: #f0e4cc;
+    --color-terracotta: #c05830; --color-ochre: #d4a040; --color-indigo: #3a2860;
+    --color-sage: #506038; --color-white: #1a1624;
+    --color-toolbar-bg: rgba(14,12,20,0.96); --color-toolbar-border: rgba(200,160,80,0.25);
+}
+[data-theme="swingjazz"] .hero { background: #08060c; }
+[data-theme="swingjazz"] .hero::after { opacity: 0.4; background: url("https://upload.wikimedia.org/wikipedia/commons/9/97/Etude_Alto_Saxophone.JPG") center/cover no-repeat; filter: sepia(50%) brightness(0.5); }
+[data-theme="swingjazz"] .hero-overlay { background: radial-gradient(ellipse at 50% 60%, rgba(200,160,80,0.06), transparent 50%), linear-gradient(135deg, rgba(8,6,12,0.65), rgba(8,6,12,0.35)); z-index: 1; }
+[data-theme="swingjazz"] .hero-line { color: #e0be70; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); } [data-theme="swingjazz"] .hero-line--accent { color: #c8a050; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); }
+[data-theme="swingjazz"] .hero-pre { color: #c8a050; letter-spacing: 0.5em; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
+[data-theme="swingjazz"] .hero-sub { color: rgba(232,216,192,0.5); }
+[data-theme="swingjazz"] .hero-cta { border-color: #c8a050; color: #e0be70; }
+[data-theme="swingjazz"] .hero-cta:hover { background: #c8a050; color: #08060c; }
+[data-theme="swingjazz"] .prensa-section { background: #08060c; } [data-theme="swingjazz"] .main-footer { background: #08060c; }
+[data-theme="swingjazz"] .main-nav.scrolled { background: rgba(14,12,20,0.96); }
+[data-theme="swingjazz"] .main-nav.scrolled .signature-brand { color: #e0be70; }
+[data-theme="swingjazz"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="swingjazz"] .main-nav.scrolled .nav-hamburger span { background: #e0be70; }
+[data-theme="swingjazz"] .section-title { color: #e0be70; }
+[data-theme="swingjazz"] .form-group input, [data-theme="swingjazz"] .form-group select, [data-theme="swingjazz"] .form-group textarea { background: #16131f; border-color: rgba(200,160,80,0.2); color: #e8d8c0; }
+[data-theme="swingjazz"] .obra-item { background: #16131f; }
+[data-theme="swingjazz"] .intro-quote { background: rgba(22,19,31,0.6); border-left-color: #c8a050; color: #e8d8c0; }
+[data-theme="swingjazz"] .footer-abstract-bar { background: linear-gradient(to right, #c8a050, #3a2860, #c05830, #c8a050); }
+[data-theme="swingjazz"] .form-submit { background: #c8a050; border-color: #c8a050; color: #08060c; }
+[data-theme="swingjazz"] img { filter: sepia(40%) contrast(1.1) brightness(0.9); }
+
+/* ============================================================
+   Posmodernista / Pop Art / Warhol
+   Andy Warhol foto + halftone + colores EXAGERADOS
+   ============================================================ */
+[data-theme="popart"] {
+    --color-bg: #fff200; --color-bg-alt: #ff6eb4; --color-text: #1a1a2e;
+    --color-text-light: #333366; --color-accent: #ff1744; --color-accent-deep: #d50000;
+    --color-accent-light: #ff5252; --color-ink: #0a0a1a; --color-cream: #fff;
+    --color-terracotta: #ff6d00; --color-ochre: #ffab00; --color-indigo: #304ffe;
+    --color-sage: #00c853; --color-white: #fff;
+    --color-toolbar-bg: rgba(255,242,0,0.96); --color-toolbar-border: rgba(255,23,68,0.3);
+}
+/* Hero: Marilyn Monroe (base photo Warhol used) con filtro pop art */
+[data-theme="popart"] .hero { background: #0a0a1a; }
+[data-theme="popart"] .hero::after { opacity: 0.55; background: url("https://upload.wikimedia.org/wikipedia/commons/4/4e/Monroecirca1953.jpg") center top/cover no-repeat; filter: contrast(2.2) saturate(3) brightness(1.1) hue-rotate(300deg); mix-blend-mode: screen; }
+[data-theme="popart"] .hero-overlay { background: linear-gradient(135deg, rgba(255,23,68,0.3) 0%, rgba(48,79,254,0.2) 50%, rgba(255,242,0,0.15) 100%), radial-gradient(circle, transparent 15%, rgba(10,10,26,0.6) 55%); z-index: 1; }
+/* Obra: Campbell's Soup Can - pop art filtered */
+[data-theme="popart"] .obra-section::after {
+    opacity: 0.3 !important;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/7/7d/Campbell%27s_Soup_Can_%2814785567641%29.jpg") right 5% center/auto 70% no-repeat !important;
+    filter: contrast(1.8) saturate(2.5) hue-rotate(180deg);
+}
+/* Intro: Warhol portrait */
+[data-theme="popart"] .intro-section::before {
+    opacity: 0.25 !important;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/2/2b/Andy_Warhol_by_Jack_Mitchell.jpg") right center/auto 75% no-repeat !important;
+    filter: contrast(2) saturate(3) hue-rotate(90deg);
+}
+/* Bio: Campbell's Soup wall display */
+[data-theme="popart"] .bio-section::before {
+    opacity: 0.2 !important;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/7/77/Campbells_condensed_soup_ampsterdam.jpg") center/cover no-repeat !important;
+    filter: contrast(1.5) saturate(2) hue-rotate(270deg);
+}
+/* Galeria: Banana */
+[data-theme="popart"] .galeria-section::before {
+    opacity: 0.3 !important;
+    background: url("https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg") center/contain no-repeat !important;
+    filter: contrast(2) saturate(3) brightness(1.2);
+}
+/* Halftone dots on remaining sections */
+[data-theme="popart"] .trayectoria-section::after,
+[data-theme="popart"] .contacto-section::after {
+    opacity: 1 !important;
+    background: radial-gradient(circle, rgba(255,23,68,0.08) 2.5px, transparent 2.5px) !important;
+    background-size: 18px 18px !important;
+}
+[data-theme="popart"] .hero-line { color: #fff200; text-shadow: 6px 6px 0 #ff1744, -3px -3px 0 #304ffe; }
+[data-theme="popart"] .hero-line--accent { color: #ff6eb4; text-shadow: 6px 6px 0 #304ffe, -3px -3px 0 #ff1744; font-style: normal; }
+[data-theme="popart"] .hero-pre { color: #00c853; letter-spacing: 0.4em; font-weight: 600; text-shadow: 1px 1px 0 rgba(0,0,0,0.5); }
+[data-theme="popart"] .hero-sub { text-shadow: 1px 1px 0 rgba(0,0,0,0.5); }
+[data-theme="popart"] .hero-cta { border-color: #fff200; color: #fff200; border-width: 4px; letter-spacing: 0.3em; font-weight: 600; }
+[data-theme="popart"] .hero-cta:hover { background: #ff1744; border-color: #ff1744; color: #fff; }
+[data-theme="popart"] .section-title { color: #ff1744; text-shadow: 3px 3px 0 rgba(48,79,254,0.2); }
+[data-theme="popart"] .section-label { color: #304ffe; font-weight: 600; }
+[data-theme="popart"] .section-label::before { background: #304ffe; height: 3px; }
+[data-theme="popart"] .prensa-section { background: #0a0a1a; } [data-theme="popart"] .main-footer { background: #0a0a1a; }
+[data-theme="popart"] .main-nav.scrolled { background: rgba(255,242,0,0.95); box-shadow: 0 4px 0 #ff1744; }
+[data-theme="popart"] .main-nav.scrolled .signature-brand { color: #ff1744; }
+[data-theme="popart"] .main-nav.scrolled .nav-links a { color: #333366; font-weight: 600; }
+[data-theme="popart"] .main-nav.scrolled .nav-hamburger span { background: #ff1744; }
+[data-theme="popart"] .obra-item { border: 4px solid #0a0a1a; border-radius: 0; }
+[data-theme="popart"] .obra-item:hover { transform: translateY(-8px) rotate(2deg); box-shadow: 8px 8px 0 #ff1744; }
+[data-theme="popart"] .filter-btn.active { background: #ff1744; color: #fff; border-color: #ff1744; }
+[data-theme="popart"] .filter-btn { border-width: 3px; font-weight: 600; }
+[data-theme="popart"] .footer-abstract-bar { height: 12px; background: repeating-linear-gradient(to right, #ff1744 0 16.6%, #ff6d00 16.6% 33.3%, #fff200 33.3% 50%, #00c853 50% 66.6%, #304ffe 66.6% 83.3%, #ff6eb4 83.3% 100%); }
+[data-theme="popart"] .cv-summary::before { height: 8px; background: repeating-linear-gradient(to right, #ff1744 0 20%, #fff200 20% 40%, #304ffe 40% 60%, #00c853 60% 80%, #ff6eb4 80% 100%); }
+[data-theme="popart"] .form-submit { background: #ff1744; border-color: #ff1744; color: #fff; border-radius: 0; font-weight: 700; }
+[data-theme="popart"] .form-group input, [data-theme="popart"] .form-group select, [data-theme="popart"] .form-group textarea { border-width: 3px; border-color: #0a0a1a; border-radius: 0; }
+[data-theme="popart"] .intro-abstract-block { background: #ff6eb4; opacity: 0.4; border-radius: 0; }
+[data-theme="popart"] .intro-abstract-circle { border-color: #304ffe; border-width: 5px; }
+[data-theme="popart"] .intro-quote { background: #ff1744; color: #fff; border-left: 6px solid #fff200; }
+[data-theme="popart"] .cv-summary { background: #ff6eb4; }
+[data-theme="popart"] .cv-card h4 { color: #0a0a1a; } [data-theme="popart"] .cv-card p { color: #333366; }
+
+/* ============================================================
+   Picasso - VERIFIED URLS - Guernica, Demoiselles, Old Guitarist, Weeping Woman
+   ============================================================ */
+[data-theme="picasso"] {
+    --color-bg: #f2ece0; --color-bg-alt: #e8dcc8; --color-text: #1a1830;
+    --color-text-light: #4a4268; --color-accent: #2e5aa7; --color-accent-deep: #1a3d7a;
+    --color-accent-light: #4a7ad0; --color-ink: #0c0a20; --color-cream: #f0e8d8;
+    --color-terracotta: #c23a20; --color-ochre: #d4a030; --color-indigo: #2e4a7a;
+    --color-sage: #4a6a3a; --color-white: #f5efe5;
+    --color-toolbar-bg: rgba(242,236,224,0.96); --color-toolbar-border: rgba(46,90,167,0.25);
+}
+/* Hero: GUERNICA high-res mural (1247x650) a 70% - VERY visible */
+[data-theme="picasso"] .hero { background: #0c0a20; }
+[data-theme="picasso"] .hero::after { opacity: 0.7; background: url("https://upload.wikimedia.org/wikipedia/commons/6/6f/Mural_del_Gernika.jpg") center/cover no-repeat; filter: contrast(1.4); }
+[data-theme="picasso"] .hero-overlay { background: linear-gradient(180deg, rgba(12,10,32,0.15) 0%, rgba(12,10,32,0.35) 50%, rgba(12,10,32,0.88) 100%); z-index: 1; }
+/* Intro: Les Demoiselles d'Avignon */
+[data-theme="picasso"] .intro-section::before { opacity: 0.2; background: url("https://upload.wikimedia.org/wikipedia/en/4/4c/Les_Demoiselles_d%27Avignon.jpg") right center/auto 80% no-repeat; }
+/* Obra: The Old Guitarist */
+[data-theme="picasso"] .obra-section::after { opacity: 0.18; background: url("https://upload.wikimedia.org/wikipedia/en/b/bc/Old_guitarist_chicago.jpg") left 5% center/auto 65% no-repeat; }
+/* Bio: Picasso photo */
+[data-theme="picasso"] .bio-section::before { opacity: 0.12; background: url("https://upload.wikimedia.org/wikipedia/commons/9/98/Pablo_picasso_1.jpg") right 8% center/auto 55% no-repeat; }
+/* Trayectoria: cubist patterns */
+[data-theme="picasso"] .trayectoria-section::after {
+    opacity: 1;
+    background: linear-gradient(60deg, rgba(46,90,167,0.07) 25%, transparent 25%), linear-gradient(-60deg, rgba(194,58,32,0.07) 25%, transparent 25%), linear-gradient(120deg, rgba(212,160,48,0.05) 25%, transparent 25%), linear-gradient(-120deg, rgba(74,106,58,0.04) 25%, transparent 25%);
+}
+/* Galeria: Weeping Woman */
+[data-theme="picasso"] .galeria-section::before { opacity: 0.15; background: url("https://upload.wikimedia.org/wikipedia/en/1/14/Picasso_The_Weeping_Woman_Tate_identifier_T05010_10.jpg") right 10% center/auto 55% no-repeat; }
+
+[data-theme="picasso"] .hero-line { color: #f0e8d8; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); } [data-theme="picasso"] .hero-line--accent { color: #4a7ad0; font-style: normal; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+[data-theme="picasso"] .hero-pre { color: #d4a030; text-shadow: 1px 1px 3px rgba(0,0,0,0.6); } [data-theme="picasso"] .hero-sub { text-shadow: 1px 1px 3px rgba(0,0,0,0.6); }
+[data-theme="picasso"] .hero-cta { border-color: #4a7ad0; color: #4a7ad0; border-width: 2px; }
+[data-theme="picasso"] .hero-cta:hover { background: #2e5aa7; color: #fff; }
+[data-theme="picasso"] .prensa-section { background: #0c0a20; } [data-theme="picasso"] .main-footer { background: #0c0a20; }
+[data-theme="picasso"] .main-nav.scrolled { background: rgba(242,236,224,0.96); }
+[data-theme="picasso"] .main-nav.scrolled .signature-brand { color: #2e5aa7; }
+[data-theme="picasso"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="picasso"] .main-nav.scrolled .nav-hamburger span { background: var(--color-ink); }
+[data-theme="picasso"] .obra-item { border-radius: 0; border: 3px solid rgba(26,24,48,0.1); }
+[data-theme="picasso"] .obra-item:hover { transform: translateY(-4px) rotate(-2deg) skewX(-3deg); }
+[data-theme="picasso"] .galeria-shape-1 { background: #2e5aa7; opacity: 0.6; transform: rotate(15deg) skewX(-15deg); border-radius: 0; }
+[data-theme="picasso"] .galeria-shape-2 { background: #c23a20; opacity: 0.5; transform: rotate(-12deg) skewY(10deg); border-radius: 0; }
+[data-theme="picasso"] .galeria-shape-3 { background: #d4a030; opacity: 0.5; transform: rotate(8deg) skewX(8deg); border-radius: 0; }
+[data-theme="picasso"] .galeria-shape-4 { border-color: #2e5aa7; transform: rotate(45deg); border-radius: 0; border-width: 4px; }
+[data-theme="picasso"] .intro-abstract-block { transform: rotate(-12deg) skewX(-10deg); border-radius: 0; background: linear-gradient(135deg, #2e5aa7, #c23a20); opacity: 0.2; }
+[data-theme="picasso"] .intro-abstract-circle { border-radius: 0; transform: rotate(45deg); border-color: #d4a030; border-width: 4px; }
+[data-theme="picasso"] .footer-abstract-bar { background: linear-gradient(to right, #2e5aa7, #d4a030, #c23a20, #4a6a3a, #2e5aa7); }
+[data-theme="picasso"] .cv-summary::before { background: linear-gradient(to right, #2e5aa7, #c23a20, #d4a030); }
+[data-theme="picasso"] .form-submit { background: #2e5aa7; border-color: #2e5aa7; } [data-theme="picasso"] .form-submit:hover { background: #c23a20; border-color: #c23a20; }
+[data-theme="picasso"] .prensa-card-accent { background: linear-gradient(to right, #2e5aa7, #d4a030, #c23a20); }
+
+/* ============================================================
+   Da Vinci - VERIFIED URLS
+   Vitruvian Man, Self-portrait, Lady Ermine, Mona Lisa, Last Supper, Helicopter, Annunciation
+   ============================================================ */
+[data-theme="davinci"] {
+    --color-bg: #f0e8d4; --color-bg-alt: #e4d8be; --color-text: #2e2518;
+    --color-text-light: #5c4e38; --color-accent: #7a6028; --color-accent-deep: #5a4418;
+    --color-accent-light: #a08038; --color-ink: #1a1408; --color-cream: #ece0c8;
+    --color-terracotta: #8a5030; --color-ochre: #a07828; --color-indigo: #3a4a38;
+    --color-sage: #5a6a40; --color-white: #f4ece0;
+    --color-toolbar-bg: rgba(240,232,212,0.96); --color-toolbar-border: rgba(122,96,40,0.2);
+}
+[data-theme="davinci"] body { font-family: 'Cormorant Garamond', Georgia, serif; }
+/* Hero: Vitruvian Man a 45% */
+[data-theme="davinci"] .hero { background: #1a1408; }
+[data-theme="davinci"] .hero::after { opacity: 0.45; background: url("https://upload.wikimedia.org/wikipedia/commons/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg") center/contain no-repeat; filter: sepia(10%); }
+[data-theme="davinci"] .hero-overlay { background: radial-gradient(ellipse at center, rgba(26,20,8,0.2) 15%, rgba(26,20,8,0.8) 70%); z-index: 1; }
+/* Intro: Self-portrait */
+[data-theme="davinci"] .intro-section::before { opacity: 0.15; background: url("https://upload.wikimedia.org/wikipedia/commons/f/fb/Leonardo_da_Vinci.jpeg") left 5% center/auto 50% no-repeat; filter: sepia(25%); }
+/* Obra: Lady with Ermine */
+[data-theme="davinci"] .obra-section::after { opacity: 0.15; background: url("https://upload.wikimedia.org/wikipedia/commons/f/f9/Lady_with_an_Ermine_-_Leonardo_da_Vinci_-_Google_Art_Project.jpg") right 5% center/auto 60% no-repeat; filter: sepia(20%); }
+/* Bio: Mona Lisa */
+[data-theme="davinci"] .bio-section::before { opacity: 0.22; background: url("https://upload.wikimedia.org/wikipedia/commons/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg") right 8% center/auto 65% no-repeat; filter: sepia(15%); }
+/* Trayectoria: Flying machine sketch */
+[data-theme="davinci"] .trayectoria-section::after { opacity: 0.12; background: url("https://upload.wikimedia.org/wikipedia/commons/8/80/Leonardo_helicopter.JPG") center/contain no-repeat; filter: sepia(35%); }
+/* Galeria: Last Supper */
+[data-theme="davinci"] .galeria-section::before { opacity: 0.2; background: url("https://upload.wikimedia.org/wikipedia/commons/b/bb/Leonardo_da_Vinci_-_The_Last_Supper_high_res.jpg") center/cover no-repeat; filter: sepia(25%); }
+/* Contacto: Annunciation */
+[data-theme="davinci"] .contacto-section::after { opacity: 0.12; background: url("https://upload.wikimedia.org/wikipedia/commons/b/b0/Annunciation_%28Leonardo%29_%28cropped%29.jpg") center/cover no-repeat; filter: sepia(30%); }
+
+[data-theme="davinci"] .hero-line { color: #ece0c8; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); } [data-theme="davinci"] .hero-line--accent { color: #a08038; text-shadow: 1px 1px 4px rgba(0,0,0,0.5); }
+[data-theme="davinci"] .hero-pre { color: #a08038; letter-spacing: 0.5em; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+[data-theme="davinci"] .hero-sub { text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+[data-theme="davinci"] .hero-cta { border-color: #a08038; color: #a08038; letter-spacing: 0.2em; }
+[data-theme="davinci"] .hero-cta:hover { background: #7a6028; border-color: #7a6028; color: #ece0c8; }
+[data-theme="davinci"] .prensa-section { background: #1a1408; } [data-theme="davinci"] .main-footer { background: #1a1408; }
+[data-theme="davinci"] .main-nav.scrolled { background: rgba(240,232,212,0.96); }
+[data-theme="davinci"] .main-nav.scrolled .signature-brand { color: var(--color-ink); }
+[data-theme="davinci"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="davinci"] .main-nav.scrolled .nav-hamburger span { background: var(--color-ink); }
+[data-theme="davinci"] img { filter: sepia(25%) contrast(1.05) brightness(0.95); }
+[data-theme="davinci"] .intro-abstract-circle { border-color: #a08038; border-style: dashed; border-width: 2px; }
+[data-theme="davinci"] .footer-abstract-bar { background: linear-gradient(to right, #5a4418, #7a6028, #a08038, #7a6028, #5a4418); }
+[data-theme="davinci"] .form-submit { background: #7a6028; border-color: #7a6028; }
+
+/* ============================================================
+   El Grito (Munch) - VERIFIED URLS
+   The Scream, Starry Night, Self-portrait, Sick Child, Vampire, Madonna
+   ============================================================ */
+[data-theme="munch"] {
+    --color-bg: #1a1428; --color-bg-alt: #221a34; --color-text: #e8d8c0;
+    --color-text-light: #a89880; --color-accent: #e85020; --color-accent-deep: #c04018;
+    --color-accent-light: #f07040; --color-ink: #0c0818; --color-cream: #f0e0c8;
+    --color-terracotta: #d04020; --color-ochre: #e8a020; --color-indigo: #2a2060;
+    --color-sage: #405030; --color-white: #221a34;
+    --color-toolbar-bg: rgba(26,20,40,0.96); --color-toolbar-border: rgba(232,80,32,0.25);
+}
+/* Hero: EL GRITO a 60% */
+[data-theme="munch"] .hero { background: #0c0818; }
+[data-theme="munch"] .hero::after { opacity: 0.6; background: url("https://upload.wikimedia.org/wikipedia/commons/c/c5/Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg") center/cover no-repeat; filter: saturate(1.4) contrast(1.15); }
+[data-theme="munch"] .hero-overlay { background: linear-gradient(180deg, rgba(232,160,32,0.05) 0%, rgba(12,8,24,0.35) 45%, rgba(12,8,24,0.85) 100%); z-index: 1; }
+/* Intro: cielo expresionista */
+[data-theme="munch"] .intro-section { background: linear-gradient(180deg, #221a34 0%, #2a2060 30%, #e85020 70%, #e8a020 100%) !important; }
+[data-theme="munch"] .intro-section .section-label { color: #f07040; }
+[data-theme="munch"] .intro-section .section-label::before { background: #f07040; }
+[data-theme="munch"] .intro-section .section-title { color: #e8a020; }
+[data-theme="munch"] .intro-text p { color: #c8b8a0; }
+/* Obra: Starry Night */
+[data-theme="munch"] .obra-section::after { opacity: 0.2; background: url("https://upload.wikimedia.org/wikipedia/commons/4/47/Edvard_Munch_-_Starry_Night_%281922%E2%80%9324%29.jpg") center/cover no-repeat; filter: saturate(1.3); }
+/* Bio: Self-portrait */
+[data-theme="munch"] .bio-section::before { opacity: 0.15; background: url("https://upload.wikimedia.org/wikipedia/commons/4/4d/Munch_SelfBurningCigarette.jpg") right 5% center/auto 55% no-repeat; }
+/* Trayectoria: Sick Child */
+[data-theme="munch"] .trayectoria-section::after { opacity: 0.15; background: url("https://upload.wikimedia.org/wikipedia/commons/9/99/Edvard_Munch_-_The_sick_child_%281907%29_-_Tate_Modern.jpg") center/cover no-repeat; }
+/* Galeria: Vampire */
+[data-theme="munch"] .galeria-section::before { opacity: 0.15; background: url("https://upload.wikimedia.org/wikipedia/commons/a/a2/Edvard_Munch_-_Vampire_%281895%29_-_Google_Art_Project.jpg") center/cover no-repeat; filter: saturate(1.2); }
+/* Contacto: Madonna */
+[data-theme="munch"] .contacto-section::after { opacity: 0.12; background: url("https://upload.wikimedia.org/wikipedia/commons/a/ae/Edvard_Munch_-_Madonna_%281894-1895%29.jpg") right center/auto 50% no-repeat; }
+
+[data-theme="munch"] .hero-line { color: #e8a020; text-shadow: 3px 3px 0 rgba(232,80,32,0.5); }
+[data-theme="munch"] .hero-line--accent { color: #e85020; font-style: normal; text-shadow: 3px 3px 0 rgba(42,32,96,0.5); }
+[data-theme="munch"] .hero-pre { color: #f07040; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); } [data-theme="munch"] .hero-sub { color: rgba(232,216,192,0.5); text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+[data-theme="munch"] .hero-cta { border-color: #e85020; color: #f07040; border-width: 2px; }
+[data-theme="munch"] .hero-cta:hover { background: #e85020; color: #fff; }
+[data-theme="munch"] .section-title { color: #e8a020; }
+[data-theme="munch"] .prensa-section { background: #0c0818; } [data-theme="munch"] .main-footer { background: #0c0818; }
+[data-theme="munch"] .main-nav.scrolled { background: rgba(26,20,40,0.96); }
+[data-theme="munch"] .main-nav.scrolled .signature-brand { color: #e8a020; }
+[data-theme="munch"] .main-nav.scrolled .nav-links a { color: var(--color-text-light); }
+[data-theme="munch"] .main-nav.scrolled .nav-hamburger span { background: #e8a020; }
+[data-theme="munch"] .obra-item { background: #221a34; border-radius: 0; }
+[data-theme="munch"] .form-group input, [data-theme="munch"] .form-group select, [data-theme="munch"] .form-group textarea { background: #221a34; border-color: rgba(232,80,32,0.2); color: #e8d8c0; }
+[data-theme="munch"] .intro-quote { background: rgba(34,26,52,0.7); border-left-color: #e85020; color: #e8d8c0; }
+[data-theme="munch"] .footer-abstract-bar { height: 8px; background: linear-gradient(to right, #e8a020, #e85020, #d04020, #2a2060, #0c0818); }
+[data-theme="munch"] .cv-summary::before { background: linear-gradient(to right, #e8a020, #e85020, #2a2060); }
+[data-theme="munch"] .galeria-shape-1 { background: linear-gradient(135deg, #e85020, #e8a020); opacity: 0.7; }
+[data-theme="munch"] .galeria-shape-2 { background: linear-gradient(180deg, #2a2060, #0c0818); opacity: 0.7; }
+[data-theme="munch"] .galeria-shape-3 { background: linear-gradient(45deg, #d04020, #e8a020); opacity: 0.6; }
+[data-theme="munch"] .form-submit { background: #e85020; border-color: #e85020; }
+[data-theme="munch"] .form-submit:hover { background: #c04018; border-color: #c04018; }
+[data-theme="munch"] .prensa-card { border-color: rgba(232,80,32,0.2); }
+[data-theme="munch"] .prensa-card-accent { height: 5px; background: linear-gradient(to right, #e8a020, #e85020, #2a2060); }
+[data-theme="munch"] img { filter: saturate(1.4) contrast(1.1) brightness(0.9); }

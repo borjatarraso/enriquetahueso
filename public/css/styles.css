@@ -71,6 +71,31 @@
     color: var(--color-text);
 }
 
+/* Nocturno readability: any heading that elsewhere uses --color-ink (near-black)
+   would vanish on this dark theme. Re-skin them in cream with a soft purple halo
+   so they read clearly against the deep background without losing the moody feel. */
+[data-theme="nocturne"] .section-title,
+[data-theme="nocturne"] .obra-info h3,
+[data-theme="nocturne"] .timeline-content h3,
+[data-theme="nocturne"] .cv-summary h3,
+[data-theme="nocturne"] .cv-card h4,
+[data-theme="nocturne"] .contacto-detail h4 {
+    color: var(--color-cream);
+    text-shadow: 0 0 14px rgba(167, 139, 250, 0.35), 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+/* The section-title default already paints a halo against --color-bg (light).
+   On Nocturne that halo would be a dark smudge, so neutralise it before the
+   override above repaints with a purple glow. */
+[data-theme="nocturne"] .section-title {
+    text-shadow: 0 0 14px rgba(167, 139, 250, 0.35), 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+/* Decorative giant background text in the galería section: --color-ink at 0.08
+   opacity is essentially black on black under Nocturne — swap to a faint cream
+   so the watermark stays subtly visible. */
+[data-theme="nocturne"] .galeria-east-west {
+    color: var(--color-cream);
+}
+
 /* ============================================================
    THEME: Tinta Oriental
    ============================================================ */

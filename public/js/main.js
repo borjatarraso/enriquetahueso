@@ -316,11 +316,11 @@
         try { localStorage.setItem('eh-theme', theme); } catch(e) {}
     }
 
-    // Restore saved theme
+    // Restore saved theme, default to Nocturno for first-time visitors.
     try {
         var savedTheme = localStorage.getItem('eh-theme');
-        if (savedTheme) switchTheme(savedTheme);
-    } catch(e) {}
+        switchTheme(savedTheme || 'nocturne');
+    } catch(e) { switchTheme('nocturne'); }
 
     // ============================================================
     // View Mode Toggle (Desktop / Mobile)

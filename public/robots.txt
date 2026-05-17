@@ -1,0 +1,8 @@
+# enriquetahueso.com — robots.txt
+User-agent: *
+Allow: /
+
+# Block Cloudflare-injected challenge endpoints (defensive)
+Disallow: /cdn-cgi/
+
+Sitemap: https://enriquetahueso.com/sitemap.xml

@@ -1,0 +1,17 @@
+{
+  "name": "Enriqueta Hueso Martínez",
+  "short_name": "Enriqueta Hueso",
+  "description": "Portafolio oficial de la artista valenciana Enriqueta Hueso Martínez.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#181210",
+  "theme_color": "#181210",
+  "lang": "es-ES",
+  "icons": [
+    { "src": "/img/brand/favicon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/brand/favicon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/img/brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "/img/brand/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -4,6 +4,22 @@
    Cross-browser: Chrome, Firefox, Safari, Edge
    ============================================================ */
 
+/* Google Translate widget — keep the engine active but invisible. The flag
+   dropdown is the only user-facing language control. */
+#google_translate_element { display: none !important; }
+.goog-te-banner-frame.skiptranslate,
+.goog-te-balloon-frame,
+.goog-te-gadget-icon,
+.goog-te-spinner-pos,
+.goog-tooltip,
+.goog-tooltip:hover { display: none !important; }
+body { top: 0 !important; position: static !important; }
+.skiptranslate iframe { display: none !important; visibility: hidden !important; }
+/* GT wraps every translated string in a <font> tag with yellow highlight
+   while hovering — strip that styling so translations look native. */
+font[style*="background-color"],
+font[style*="background"] { background-color: transparent !important; box-shadow: none !important; }
+
 /* ============================================================
    THEME: Classic Golden (default)
    ============================================================ */

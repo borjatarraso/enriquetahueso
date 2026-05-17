@@ -243,8 +243,28 @@
         });
     }
 
-    function switchLanguage(lang) {
+    // Google Translate language codes (Chinese needs zh-CN; rest match).
+    var gtLangMap = { es: 'es', en: 'en', de: 'de', fr: 'fr', it: 'it', zh: 'zh-CN', ja: 'ja', fa: 'fa' };
+
+    function setGoogTransCookie(value) {
+        var host = location.hostname.replace(/^www\./, '');
+        if (value === null) {
+            // Clear: expire on all relevant scopes.
+            document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            if (host && host.indexOf('.') !== -1) {
+                document.cookie = 'googtrans=; path=/; domain=.' + host + '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            }
+            return;
+        }
+        document.cookie = 'googtrans=' + value + '; path=/; max-age=' + (86400 * 365);
+        if (host && host.indexOf('.') !== -1) {
+            document.cookie = 'googtrans=' + value + '; path=/; domain=.' + host + '; max-age=' + (86400 * 365);
+        }
+    }
+
+    function switchLanguage(lang, skipReload) {
         if (!translations[lang]) return;
+        var prevLang = currentLang;
         currentLang = lang;
 
         for (var o = 0; o < langOptions.length; o++) {
@@ -262,6 +282,8 @@
         document.documentElement.lang = lang;
         document.documentElement.dir = rtlLanguages.indexOf(lang) !== -1 ? 'rtl' : 'ltr';
 
+        // Apply curated translations for the elements that have them — snappy
+        // and high-quality for the artist's own phrasing.
         var elements = document.querySelectorAll('[data-i18n]');
         for (var e = 0; e < elements.length; e++) {
             var key = elements[e].getAttribute('data-i18n');
@@ -273,7 +295,31 @@
                 }
             }
         }
+
+        // Persist choice across reloads.
+        try { localStorage.setItem('eh-lang', lang); } catch(err) {}
+
+        // Drive Google Translate for everything the dictionary doesn't cover
+        // (gallery cards, address blocks, alt text, dynamic form text…).
+        // Cookie + soft reload is the most reliable trigger across browsers;
+        // the head pre-init script applies the cookie before GT loads so the
+        // post-reload paint comes up already translated, no Spanish flash.
+        if (skipReload || lang === prevLang) return;
+        if (lang === 'es') {
+            setGoogTransCookie(null);
+        } else {
+            setGoogTransCookie('/es/' + (gtLangMap[lang] || lang));
+        }
+        location.reload();
     }
+
+    // Restore saved language on page load: refresh dropdown UI and apply the
+    // curated dictionary, but skip the reload (we just landed — Google
+    // Translate is already painting the rest based on the cookie set in <head>).
+    try {
+        var savedLang = localStorage.getItem('eh-lang');
+        if (savedLang && translations[savedLang]) switchLanguage(savedLang, true);
+    } catch(e) {}
 
     // ============================================================
     // Theme Selector

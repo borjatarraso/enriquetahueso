@@ -12,6 +12,14 @@ Bilingual (EN/ES) artist-portfolio website for **Enriqueta Hueso**.
 > 2026-04-18). It was decoupled from the sibling `galeriaomaso` site on
 > 2026-05-17 — cross-links between the two now use absolute URLs.
 
+> 🤝 **Are you an external contributor?**
+> Everything between here and the Contributing section describes how the
+> **maintainer** (Borja Tarraso) operates the site day-to-day — direct
+> pushes to `main`, local helper tooling (Lynx Factory, multiplexers,
+> auto-redeploy watchers), Cloudflare credentials, etc. **You do not need
+> any of that.** Jump straight to [Contributing](#contributing) for the
+> fork → branch → Pull Request workflow that's open to anyone.
+
 ---
 
 ## How a content change reaches visitors
@@ -44,7 +52,11 @@ Python builders regenerate the `public/` tree from the source content
 
 ---
 
-## Day-to-day workflow
+## Day-to-day maintainer workflow
+
+> Only the maintainer (Borja Tarraso) has push access to `main`. If you're
+> an external contributor, the workflow you want is in
+> [Contributing](#contributing) — fork, branch, Pull Request.
 
 ```bash
 # 1. edit content / gallery data / template

@@ -260,6 +260,35 @@ to improve discoverability, social-share appearance, and Core Web Vitals.
   images, fonts) and zero-cache HTML — fresh content always served, but
   repeat visitors only download the HTML shell.
 
+**Per-post enrichment (the 313 legacy posts)**
+- Unique `<meta description>` extracted from each post body (first ~160
+  chars) — replaces the generic site-wide fallback. Posts now get
+  distinct SERP snippets.
+- `Article` JSON-LD per post: `headline`, `datePublished` (parsed from
+  the Spanish post date), `author`, `publisher`, page-specific `image`.
+- `BreadcrumbList` JSON-LD: `Inicio → Galería O+O → Exposiciones →
+  <post title>` — Google renders the breadcrumb path in SERP instead
+  of the raw URL.
+
+**Local business / gallery presence**
+- `ArtGallery` (+ `LocalBusiness`) JSON-LD on `contacta`, `como-llegar`,
+  and `site/index` — full address, telephone, opening hours, founder,
+  languages spoken, price range. Powers Google's local pack and Maps
+  knowledge panel.
+
+**Discovery surfaces**
+- `sitemap-images.xml` — separate image sitemap with titles + captions
+  for all 1,175 indexable images. Feeds Google Images crawl.
+- `sitemap-index.xml` — references both page and image sitemaps so a
+  single URL submission to Search Console covers everything.
+- `feed.xml` — Atom 1.0 feed of the latest 40 posts. Auto-discovered by
+  feed readers (Feedly, Inoreader, NetNewsWire) via the
+  `<link rel="alternate" type="application/atom+xml">` on the homepage.
+  Google Discover surfaces feed-published content.
+- Custom `404.html` — branded, theme-matched, links back to home,
+  exposiciones, artistas, sitemap, feed. Cloudflare Pages auto-serves
+  it for any unmatched route.
+
 ### Cloudflare dashboard toggles (enable separately)
 
 These improve performance and analytics but are configured in the
@@ -282,6 +311,8 @@ Cloudflare dashboard, not in the repo:
 ```bash
 # Whenever new pages or posts are added:
 python3 gen_sitemap.py        # rebuilds public/sitemap.xml + robots.txt
+python3 gen_image_sitemap.py  # rebuilds sitemap-images.xml + sitemap-index.xml
+python3 gen_feed.py           # rebuilds feed.xml (Atom, latest 40 posts)
 
 # If the brand image or favicons need updating:
 python3 gen_brand_assets.py   # rewrites public/img/brand/*
@@ -289,6 +320,12 @@ python3 gen_brand_assets.py   # rewrites public/img/brand/*
 # To inject SEO meta into newly-added legacy pages (idempotent — skips
 # files already marked with the SEO-META-INJECTED comment):
 python3 seo_inject.py
+
+# To enrich newly-added posts with unique descriptions + Article schema:
+python3 post_enrich.py        # idempotent; pass --redo to overwrite
+
+# To add LocalBusiness schema after editing contact/gallery info:
+python3 local_business_inject.py
 
 # To add alt + lazy-loading to newly-added images:
 python3 img_alt_fix.py
@@ -333,8 +370,12 @@ Both PDFs embed the three diagrams above at full resolution.
 ├── generate_docs.py        # builds the EN/ES instruction PDFs in docs/
 ├── sanitize_site.py        # post-build sanitizer (strips dev artifacts)
 ├── gen_sitemap.py          # generates public/sitemap.xml + robots.txt
+├── gen_image_sitemap.py    # generates sitemap-images.xml + sitemap-index.xml
+├── gen_feed.py             # generates feed.xml (Atom)
 ├── gen_brand_assets.py     # generates og-image + favicon set
 ├── seo_inject.py           # injects canonical/OG/Twitter meta into pages
+├── post_enrich.py          # per-post descriptions + Article + Breadcrumb JSON-LD
+├── local_business_inject.py # injects ArtGallery JSON-LD on contact pages
 ├── img_alt_fix.py          # adds alt + loading="lazy" to legacy images
 ├── gallery-data.json       # source of truth for exhibition data
 ├── index.html              # source landing page

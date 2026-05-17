@@ -214,6 +214,61 @@ Both PDFs embed the three diagrams above at full resolution.
 
 ---
 
+## Contributing
+
+This repo is public on GitHub and external contributions are welcome. You do
+**not** need Lynx Factory, the multiplexer, or any of the local tooling
+described above — those are operator conveniences for the maintainer. A plain
+git + Python + GitHub workflow is enough.
+
+```bash
+# 1. fork the repo on GitHub (Fork button, top-right of the repo page)
+# 2. clone your fork
+git clone https://github.com/<your-username>/enriquetahueso.git
+cd enriquetahueso
+
+# 3. create a topic branch
+git checkout -b add/new-exhibition-entry
+
+# 4. edit source content (gallery-data.json, templates, css, images...)
+$EDITOR gallery-data.json
+
+# 5. rebuild the public/ tree so reviewers can see the rendered output
+python3 build_site.py
+python3 build_gallery.py
+
+# 6. preview locally
+xdg-open public/index.html
+
+# 7. commit + push to your fork (include both source AND regenerated public/)
+git add -A
+git commit -m "Add 2026 Helsinki exhibition entry"
+git push -u origin add/new-exhibition-entry
+
+# 8. open a Pull Request on GitHub
+#    Your fork's page will show a "Compare & pull request" button.
+#    Target the upstream `borjatarraso/enriquetahueso` repo, `main` branch.
+```
+
+> GitHub calls these **Pull Requests** (PRs); GitLab calls the same thing
+> Merge Requests (MRs). Same concept either way.
+
+**Borja Tarraso** (`<borja.tarraso@member.fsf.org>`) will review every PR and
+either merge it (sometimes with small adjustments) or leave review comments
+explaining why a change can't be accepted in its current form. Please:
+
+- Keep PRs focused — one logical change per PR is easier to review than a
+  large multi-purpose patch.
+- Always commit the **regenerated `public/` tree** alongside your source
+  edits — the deploy reads from `public/`, so a PR that only changes source
+  would deploy nothing.
+- Write a short PR description explaining *why* the change is useful, not
+  just *what* the change is.
+- For bigger ideas (new sections, design changes, structural moves), open a
+  GitHub issue first to agree on the approach before investing time.
+
+---
+
 ## License & author
 
 Author: **Borja Tarraso** &nbsp;`<borja.tarraso@member.fsf.org>`
